@@ -19,6 +19,6 @@ class UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:time_zone)
+    params.require(:user).permit(:email)
   end
 end
