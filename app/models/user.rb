@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   has_one :profile
+  accepts_nested_attributes_for :profile
   has_many :memberships
   has_many :groups, :through => :memberships
 
