@@ -11,6 +11,7 @@ class Admin::EventsController < AdminController
   def new
     @event = Event.new
     @event.tickets.build
+    @event.tickets.build
   end
 
   def create
@@ -25,7 +26,9 @@ class Admin::EventsController < AdminController
 
   def edit
     @event = Event.find_by_friendly_id!(params[:id])
-    @event.tickets.build if @event.tickets.empty?
+    @event.tickets.build
+    @event.tickets.build
+    #@event.tickets.build if @event.tickets.empty?
   end
 
   def update
