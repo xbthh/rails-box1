@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org/'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -47,6 +47,8 @@ gem "select2-rails"
 gem "nested_form_fields"
 gem 'bootstrap-datepicker-rails'
 gem 'ckeditor'
+gem 'ranked-model'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'rspec-rails'
