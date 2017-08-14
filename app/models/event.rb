@@ -1,5 +1,9 @@
 class Event < ApplicationRecord
 
+  mount_uploader :logo, EventLogoUploader
+  mount_uploaders :images, EventImageUploader
+  serialize :images, JSON
+
   has_many :registrations, :dependent => :destroy
 
   include RankedModel
