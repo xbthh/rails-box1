@@ -1,10 +1,12 @@
 class Registration < ApplicationRecord
 
+  has_paper_trail
+
   attr_accessor :current_step
   validates_presence_of :name, :email, :cellphone, :if => :should_validate_basic_data?
   validates_presence_of :name, :email, :cellphone, :bio, :if => :should_validate_all_data?
 
-  validate :check_event_status, :on => :create
+  #validate :check_event_status, :on => :create
 
   STATUS = ["pending", "confirmed"]
   validates_inclusion_of :status, :in => STATUS
