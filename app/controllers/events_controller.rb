@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
 
+  skip_before_filter :verify_authenticity_token
+
+
   def index
     @events = Event.only_public.rank(:row_order).all
   end

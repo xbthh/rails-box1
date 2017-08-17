@@ -1,5 +1,9 @@
 class Admin::UsersController < AdminController
 
+  #skip_before_filter :verify_authenticity_token
+
+  before_action :require_admin!
+
   def index
     #@users = User.all
     #用这种方式可以防止 N+1 Query 问题
@@ -22,7 +26,8 @@ class Admin::UsersController < AdminController
 
   protected
   def user_params
-    params.require(:user).permit(:email, :group_ids => [])
+    #params.require(:user).permit(:email, :group_ids => [])
+    params.require(:user).permit(:email, :role, :group_ids => [])
   end
 
 end
