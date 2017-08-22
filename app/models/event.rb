@@ -8,6 +8,7 @@ class Event < ApplicationRecord
   serialize :images, JSON
 
   has_many :registrations, :dependent => :destroy
+  has_many :registration_imports, :dependent => :destroy
 
   include RankedModel
   ranks :row_order
