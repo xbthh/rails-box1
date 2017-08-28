@@ -8,7 +8,8 @@ class Registration < ApplicationRecord
 
   #validate :check_event_status, :on => :create
 
-  STATUS = ["pending", "confirmed"]
+  #STATUS = ["pending", "confirmed"]
+  STATUS = ["pending", "confirmed", "cancalled"]
   validates_inclusion_of :status, :in => STATUS
   validates_presence_of :status, :ticket_id
 
